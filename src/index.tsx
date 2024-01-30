@@ -1,19 +1,39 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App";
+import { reset } from "styled-reset";
+import { createGlobalStyle } from "styled-components";
+import { ChakraProvider } from "@chakra-ui/react";
+import { RecoilRoot } from "recoil";
+
+const GlobalStyle = createGlobalStyle`
+  ${reset}
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background-color: #0058fb;
+    color: white;
+    
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+  * {
+    box-sizing: border-box;
+  }
+
+  a {
+    text-decoration: none;
+  }
+`;
 
 const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
+    document.getElementById("root") as HTMLElement
 );
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+    <RecoilRoot>
+        <ChakraProvider>
+            <GlobalStyle />
+            <App />
+        </ChakraProvider>
+    </RecoilRoot>
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
