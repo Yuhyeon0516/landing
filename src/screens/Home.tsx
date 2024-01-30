@@ -33,11 +33,16 @@ export default function Home() {
     return (
         <Box w={"100vw"}>
             <ScrollContainer style={{ width: "100%" }}>
-                <ScrollPage>
+                <ScrollPage style={{ width: "100%" }}>
                     <Animator
                         animation={batch(Fade(), Sticky(), MoveOut(0, -200))}
+                        style={{ width: "100%" }}
                     >
-                        <Text fontSize={36} fontWeight={"bold"}>
+                        <Text
+                            fontSize={[18, 36, 48]}
+                            fontWeight={"bold"}
+                            textAlign={"center"}
+                        >
                             외주 개발 믿음직한 곳을 찾지 못하셨나요?
                         </Text>
                     </Animator>
@@ -51,8 +56,15 @@ export default function Home() {
                         justifyContent={"center"}
                         display={"flex"}
                     >
-                        <Animator animation={batch(MoveIn(800, 0), Fade())}>
-                            <Text fontSize={36} fontWeight={"bold"}>
+                        <Animator
+                            animation={batch(MoveIn(800, 0), Fade())}
+                            style={{ width: "100%" }}
+                        >
+                            <Text
+                                fontSize={[24, 36, 48]}
+                                fontWeight={"bold"}
+                                textAlign={"center"}
+                            >
                                 왜 찾지 못하셨을까요?
                             </Text>
                         </Animator>
@@ -67,8 +79,15 @@ export default function Home() {
                         justifyContent={"center"}
                         display={"flex"}
                     >
-                        <Animator animation={ZoomInScrollOut}>
-                            <Text fontSize={36} fontWeight={"bold"}>
+                        <Animator
+                            animation={ZoomInScrollOut}
+                            style={{ width: "100%" }}
+                        >
+                            <Text
+                                fontSize={[24, 36, 48]}
+                                fontWeight={"bold"}
+                                textAlign={"center"}
+                            >
                                 원하는 결과물이 안나올까봐?
                             </Text>
                         </Animator>
@@ -83,12 +102,10 @@ export default function Home() {
                         h={"100%"}
                     >
                         <Text
-                            style={{
-                                fontSize: "40px",
-                                lineHeight: 1.5,
-                                textAlign: "center",
-                                fontWeight: "bold",
-                            }}
+                            fontSize={[24, 40, 56]}
+                            lineHeight={1.5}
+                            textAlign={"center"}
+                            fontWeight={"bold"}
                         >
                             그럴때는 저희 Instead Of Me!
                             <Animator animation={MoveIn(-500, 0)}>
@@ -105,29 +122,38 @@ export default function Home() {
                 </ScrollPage>
 
                 <ScrollPage>
-                    <Animator animation={FadeUp}>
+                    <Animator animation={FadeUp} style={{ width: "100%" }}>
                         <VStack
-                            fontSize={36}
+                            fontSize={[28, 36, 44]}
                             fontWeight={"bold"}
                             textAlign={"center"}
                             lineHeight={1.5}
                         >
-                            <Text fontSize={48}>Instead Of Me</Text>
-                            <Text>삼성전자 출신 개발자 3명이 뭉쳤습니다.</Text>
-                            <Text>대기업 경력만 27년..</Text>
+                            <Text
+                                fontSize={[40, 48, 56]}
+                                fontWeight={"extrabold"}
+                            >
+                                Instead Of Me
+                            </Text>
+                            <Text>삼성전자 출신 개발자</Text>
+                            <Text>3명이 뭉쳤습니다</Text>
+                            <Text>대기업 경력만 27년..!!</Text>
                         </VStack>
                     </Animator>
                 </ScrollPage>
 
                 <ScrollPage>
-                    <Animator animation={batch(Fade(), Sticky())}>
+                    <Animator
+                        animation={batch(Fade(), Sticky())}
+                        style={{ width: "100%" }}
+                    >
                         <VStack
-                            fontSize={36}
+                            fontSize={[24, 36, 48]}
                             mt={20}
                             fontWeight={"bold"}
                             lineHeight={1.2}
                         >
-                            <Text fontSize={48} mb={10}>
+                            <Text fontSize={[40, 48, 56]} mb={10}>
                                 Instead Of Me!
                             </Text>
                             <Text>여러분의 시작을 함께하고 싶습니다.</Text>
