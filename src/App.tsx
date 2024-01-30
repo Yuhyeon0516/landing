@@ -3,19 +3,22 @@ import Notfound from "./screens/Notfound";
 import Layout from "./screens/Layout";
 import Home from "./screens/Home";
 
-const router = createBrowserRouter([
-    {
-        path: "/",
-        errorElement: <Notfound />,
-        element: <Layout />,
-        children: [
-            {
-                path: "",
-                element: <Home />,
-            },
-        ],
-    },
-]);
+const router = createBrowserRouter(
+    [
+        {
+            path: "/",
+            errorElement: <Notfound />,
+            element: <Layout />,
+            children: [
+                {
+                    path: "",
+                    element: <Home />,
+                },
+            ],
+        },
+    ],
+    { basename: "/landing" }
+);
 
 function App() {
     return <RouterProvider router={router} />;
